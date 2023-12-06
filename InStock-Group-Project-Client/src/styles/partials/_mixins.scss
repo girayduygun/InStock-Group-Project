@@ -1,0 +1,348 @@
+@use "variables" as *;
+
+@mixin tablet {
+    @media (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-breakpoint) {
+        @content;
+    }    
+}
+
+/*Mobile Text Styles*/
+@mixin m-header-text {
+    font-size:28px ;
+    line-height:36px;
+    font-weight: 700;
+}
+
+@mixin m-subheader-text {
+    font-size:20px;
+    line-height:88px;
+    font-weight: 700;
+}
+
+@mixin m-lableLinkButton-text {
+    font-size:13px;
+    line-height:20px;
+    font-weight: 700;
+}
+
+@mixin m-tableHeader-text {
+    font-size: 11px;
+    line-height:16px;
+    font-weight:400;
+}
+
+@mixin m-bodyLarge-text {
+    font-size: 15px;
+    line-height:26px;
+    font-weight:400;
+}
+
+@mixin m-bodyMedium-text {
+    font-size: 13px;
+    line-height:20px;
+    font-weight:400;
+}
+
+@mixin m-bodyLarge-text {
+    font-size: 11px;
+    line-height:16px;
+    font-weight:400;
+
+}
+
+/*Tablets Text Styles*/
+
+@mixin td-header-text {
+    font-size:32px ;
+    line-height:40px;
+    font-weight: 700;
+}
+
+@mixin td-subheader-text {
+    font-size:24px;
+    line-height:32px;
+    font-weight: 700;
+
+}
+
+@mixin td-lableLinkButton-text {
+    font-size:14px;
+    line-height:22px;
+    font-weight: 700;
+}
+
+@mixin td-tableHeader-text {
+    font-size: 12px;
+    line-height:18px;
+    font-weight:400;
+
+}
+
+@mixin td-bodyLarge-text {
+    font-size: 16px;
+    line-height:28px;
+    font-weight:400;
+}
+
+@mixin td-bodyMedium-text {
+    font-size: 14px;
+    line-height:22px;
+    font-weight:400;
+}
+
+@mixin td-bodySmall-text {
+    font-size: 12px;
+    line-height:18px;
+    font-weight:400;
+
+}
+
+@mixin no-padding-or-margin {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin switch-column-to-row--tablet {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@mixin switch-column-to-row--desktop {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@mixin section-padding {
+    padding: 1rem $mobile-horizontal-padding 1rem $mobile-horizontal-padding;
+    @include tablet {
+        padding: 1.5rem $tablet-horizontal-padding 1rem $tablet-horizontal-padding;
+    }
+    @include desktop {
+        padding: 1.5rem $desktop-horizontal-padding 1rem $desktop-horizontal-padding;
+    }
+}
+
+@mixin logo {
+    height: 1.75rem;
+    max-width: 75rem;
+}
+
+@mixin button-styling {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: $color-secondary;
+    color: $color-quaternary;
+    border-radius: 0.325rem;
+    border: 0;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-secondary-alt;
+    }
+    @include tablet {
+        padding: 0.625rem 0.75rem;
+    }
+    &__icon {
+        height: auto;
+        width: 1.75rem;
+    }
+    &__text {
+        font-size: 0.875rem;
+        @include no-padding-or-margin;
+    }
+    &__space {
+        @extend .button__icon;
+    }
+}
+
+@mixin formInputStyling {
+    border: $color-secondary-2 1px solid;
+    border-radius: 2rem;
+    background-color: $color-primary-3;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    padding:0.25rem 0.75rem;
+    @include tablet {
+        padding:0.5rem 1rem;
+    }
+    &:focus {
+        border: $color-secondary-1 2px solid;
+    }
+    &--invalid {
+        border: $color-supporting-2 2px solid;
+    }
+}
+
+@mixin formStyling {
+    display: flex;
+    border-bottom: $divider;
+    &__icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: cover;
+        object-position: left;
+        border-radius: 1.25rem;
+        border: 0;
+        @include tablet {
+            width: 3.325rem;
+            height: 3.325rem;
+            border-radius: 2rem;
+        }
+    }
+    &__column {
+        @include switch-column-to-row--tablet;
+        width: 100%;
+        @include tablet {
+            align-items: flex-end;
+        }
+    }
+    &__input-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__label {
+        color: $color-tertiary;
+        font-size: 0.875rem;
+        line-height: 0.875rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+    &__text {
+        @include formInputStyling;
+        margin-bottom: 1.5rem;
+    }
+    &__textarea {
+        @include formInputStyling;
+        font-family: "TitilliumWeb", sans-serif;
+        color: $color-primary;
+        text-decoration: none;
+        resize: none;
+        height: 5rem;
+        width: 100%;
+        @include tablet {
+            height: 3.325rem;
+            margin: 0;
+        }
+    }
+    &__button {
+        @include tablet {
+            height: 3.325rem;
+            width: 17rem;
+        }
+        @include desktop {
+            width: 13rem;
+        }
+    }
+}
+
+/*Mobile Text Styles*/
+
+@mixin m-header-text {
+    font-size:28px ;
+    line-height:36px;
+    font-weight: 700;
+}
+
+@mixin m-subheader-text {
+    font-size:20px;
+    line-height:88px;
+    font-weight: 700;
+
+}
+
+@mixin m-lableLinkButton-text {
+    font-size:13px;
+    line-height:20px;
+    font-weight: 700;
+}
+
+@mixin m-tableHeader-text {
+    font-size: 11px;
+    line-height:16px;
+    font-weight:400;
+
+}
+
+@mixin m-bodyLarge-text {
+    font-size: 15px;
+    line-height:26px;
+    font-weight:400;
+}
+
+@mixin m-bodyMedium-text {
+    font-size: 13px;
+    line-height:20px;
+    font-weight:400;
+}
+
+@mixin m-bodyLarge-text {
+    font-size: 11px;
+    line-height:16px;
+    font-weight:400;
+
+}
+
+/*Tablets Text Styles*/
+
+@mixin td-header-text {
+    font-size:32px ;
+    line-height:40px;
+    font-weight: 700;
+}
+
+@mixin td-subheader-text {
+    font-size:24px;
+    line-height:32px;
+    font-weight: 700;
+
+}
+
+@mixin td-lableLinkButton-text {
+    font-size:14px;
+    line-height:22px;
+    font-weight: 700;
+}
+
+@mixin td-tableHeader-text {
+    font-size: 12px;
+    line-height:18px;
+    font-weight:400;
+
+}
+
+@mixin td-bodyLarge-text {
+    font-size: 16px;
+    line-height:28px;
+    font-weight:400;
+}
+
+@mixin td-bodyMedium-text {
+    font-size: 14px;
+    line-height:22px;
+    font-weight:400;
+}
+
+@mixin td-bodySmall-text {
+    font-size: 12px;
+    line-height:18px;
+    font-weight:400;
+
+}
+

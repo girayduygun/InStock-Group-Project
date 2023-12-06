@@ -1,0 +1,204 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.inventory{
+    
+    &__list {
+        padding: 0;
+        list-style-type: none;
+        font-family: TitilliumWeb-Regular;
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            margin: 0 2rem;
+        }
+    }
+
+
+    &__list-item {
+        padding: 0 1.5rem;
+        border-bottom: 1px solid $color-secondary-2;
+        height: 237px;
+        box-sizing: border-box;
+        text-align: left;
+
+        &:hover {
+            background-color: rgba(46, 102, 230, 0.07);
+        }
+
+        @include tablet {
+            display: flex;
+            height: 59px;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        @include desktop {
+            margin: 0 2rem;
+        }
+    }
+
+    &__item-content {
+        display: flex;
+        flex-flow: column wrap;
+        padding-top: 1rem;
+        height: 180px;
+
+        @include tablet {
+
+            flex-flow: unset;
+            align-content: center;
+            margin: 0;
+            padding-top: 30px;
+            justify-content: space-between;
+            align-items: center;
+            height: unset;
+            width: 100%;
+        }
+    }
+
+    &__label-wrap {
+        margin-bottom: 25px;
+        margin-right: 2rem;
+        width: 110px;
+
+        @include tablet {
+            margin-right: 0rem;
+            width: 120px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+
+    &__label {
+        font-size: 11px;
+        line-height: 16px;
+        font-weight: 600;
+        color: $color-secondary-1;
+
+        @include tablet {
+            display: none;
+            margin-bottom: 24px;
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+        color: $color-primary-2;
+        display: flex;
+        align-items: center;
+    }
+
+    &__name-icon {
+        height: 18px;
+        margin-left: 4px;
+    }
+
+    &__item-category {
+        margin-bottom: 30px;
+    }
+
+    
+
+    &__status {
+        font-size: 11px;
+        line-height: 16px;
+        font-weight: 600;
+        width: 61px;
+        text-align: center;
+        border-radius: 20px;
+
+        &--instock {
+            color: $color-supporting;
+            background-color: rgba(21, 132, 99, 0.07);
+            width: 61px;
+        }
+
+        &--outstock {
+            color: $color-supporting-2;
+            background-color: rgba(201, 69, 21, 0.07);
+            width: 86px;
+        }
+
+        @include tablet {
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+    }
+
+  
+    
+    &__item-actions {
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80px;
+        }
+    }
+    &__label-actions {
+        display: none;
+
+        @include tablet {
+            margin: 0 0 1rem 0;
+        }
+    }
+
+    &__sort-icon {
+        display: none;
+
+        @include tablet {
+            display: unset;
+            height: 14px;
+        }
+    }
+
+    &__actions-functions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: 5px;
+        @include tablet {
+            justify-content: center;
+            padding-right: 40px;
+
+        }
+    }
+
+    &__delete {
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+
+            &:hover{
+                transform: rotate(30deg);
+            }
+    }
+
+    &__edit {
+        transition: transform 0.3s ease-in-out;
+            &:hover{
+                transform: rotate(30deg);
+            }
+
+        @include tablet {
+            margin-left: 20px;
+            position: relative;
+        }
+    }
+}

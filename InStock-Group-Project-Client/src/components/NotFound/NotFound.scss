@@ -1,0 +1,34 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7rem 3rem;
+    width: 100%;
+    @include tablet {
+        padding: 10rem 5rem;
+    }
+    &__title {
+        text-align: center;
+        color: $color-primary-2;
+        font-size: 3.5rem;
+        font-weight: bold;
+        @include tablet {
+            font-size: 7rem;
+        }
+    }
+    &__text {
+        text-align: center;
+        text-wrap: wrap;
+        width: 100%;
+        font-size: 0.75rem;
+        @include tablet {
+            width: 50%;
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+.filter{
+    display: none;
+}
+
+@include tablet{
+    .filter{
+        margin: 0 2rem;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        background-color: $color-background-2;
+
+        &__column{
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            width: 136px;
+        }
+            &__title{
+                text-transform: uppercase;
+                padding: 0;
+                margin: 0;
+                font-family: "TitilliumWeb-Regular";
+            }
+
+            &__icon{
+                height: 1rem;
+                margin-left: 0.5rem;
+                cursor: pointer;
+            }
+
+            &__actions{
+                width: 10%;
+            }
+    }
+}
+
+@include desktop{
+    .filter{
+        margin: 0 4rem;
+    }
+}

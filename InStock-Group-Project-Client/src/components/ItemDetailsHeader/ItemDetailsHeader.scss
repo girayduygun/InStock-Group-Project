@@ -1,0 +1,98 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+.inv-header {
+	display: flex;
+	height: 110px;
+	justify-content: space-between;
+	padding-top: 1rem;
+	background-color: $color-primary-3;
+	border-radius: 3px;
+
+	@include tablet {
+		height: 5.813rem;
+		position: relative;
+		top: -73px;
+		padding-left: 2rem;
+		padding-top: 1.5rem;
+	}
+
+	&__left-container {
+		display: flex;
+		padding-left: 1rem;
+	}
+
+	&__right-container {
+		padding-right: 1rem;
+	}
+
+	&__arrow {
+		width: 1.5rem;
+		height: 1.5rem;
+		margin-top: 0.6rem;
+		margin-left: 0.5rem;
+	}
+
+	&__title {
+		font-size: 1.75rem;
+		padding-left: 0.5rem;
+	}
+
+	&__link {
+		@include tablet {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+		}
+	}
+
+	&__text {
+		display: none;
+
+		@include tablet {
+			color: white;
+			display: flex;
+			text-decoration: none;
+			padding-left: 0.5rem;
+		}
+	}
+
+	&__edit-button {
+		background-color: $color-primary-2;
+		height: 36px;
+		width: 36px;
+		border-radius: 50%;
+		margin-left: 3.875rem;
+		position: relative;
+
+		@include tablet {
+			background-color: $color-primary-2;
+			display: flex;
+			align-items: center;
+			width: 81px;
+			height: 38px;
+			border-radius: 20px;
+			margin-right: 2rem;
+			justify-content: center;
+			margin-left: 24rem;
+		}
+
+		@include desktop {
+			margin-left: 52rem;
+		}
+	}
+
+	&__icon {
+		width: 20px;
+		height: 20px;
+		margin-left: 9px;
+		margin-top:7px;
+
+		@include tablet {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}

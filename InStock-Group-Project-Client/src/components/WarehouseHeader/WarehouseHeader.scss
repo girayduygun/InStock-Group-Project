@@ -1,0 +1,133 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+
+
+.warehouse{
+    margin: 0;
+    padding: 0;
+    background-color: $color-primary-3;
+
+    &__header{
+        background-color: $color-primary-1;
+        text-transform: capitalize;
+    }
+
+    &__title{
+        font-weight: 600;
+        font-size: 1.75rem;
+        background-color: $color-background-2;
+        margin: 0 1rem;
+        padding: 1.5rem 1rem 0 1rem;
+    }
+
+    &__controls{
+        margin: 0 1rem;
+        padding: 1rem;
+        background-color: $color-background-2;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+        &__search{
+            padding:0 1rem;
+            background-image: url('../../assets/icons/search-24px.svg');
+            background-position-x: calc(100% - 1rem);
+            background-position-y: center;
+            background-repeat: no-repeat;
+            height: 2.25rem;
+            border-radius: 1.25rem;
+            border: 1px solid #bdc5d5;
+            margin-bottom: 0.75rem;
+
+            &:focus::placeholder{
+                color: transparent;
+            }
+        }
+
+        &__button{
+            height: 2.25rem;
+            border-radius: 1.25rem;
+            border: none;
+            background-color: #2E66E5;
+            color: #FFFFFF;
+            font-size: 1rem;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        a:visited{
+            color: #FFFFFF;
+        }
+}
+
+@include tablet{
+    .warehouse{
+       display: flex;
+       width: 100%;
+       box-sizing: border-box;
+       justify-content: space-between;
+       background-color: $color-background;
+       padding: 0 2rem;
+
+       &__nav{
+        width: 100%;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        background-color: $color-background-2;
+       }
+
+       &__title{
+        margin-right: 0;
+        margin-left: 0;
+       }
+
+       &__controls{
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        width: 55%;
+       }
+    
+            &__search{
+                padding:0 1rem;
+                margin: 0 1rem;
+                background-image: url("../../assets/icons/search-24px.svg");
+                background-position-x: calc(100% - 1rem);
+                background-position-y: center;
+                background-repeat: no-repeat;
+                height: 2.50rem;
+                border-radius: 1.25rem;
+                width: 50%;
+            
+                &:focus::placeholder{
+                    color: transparent;
+                }
+            }
+
+            a{
+                text-align: center;
+                width: 50%;
+                height: 2.50rem;
+                border-radius: 1.25rem;
+                border: none;
+                background-color: #2E66E5;
+                color: #FFFFFF;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    }
+}
+
+
+@include desktop{
+    .warehouse{
+        padding: 0 4rem;
+    }
+}

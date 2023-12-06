@@ -1,0 +1,196 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.warehouse-form{
+
+    &__top{
+        background-color: $color-background;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+    &__nav{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        background-color: $color-primary-3;
+        margin: 0 1rem;
+        padding: 1rem 1rem;
+        border: none;
+        border-top-right-radius: 0.25rem;
+        border-top-left-radius: 0.25rem;
+    }
+
+    &__title{
+        margin-left: 1rem;
+    }
+}
+
+.form{
+    background-color: $color-background-2;
+
+    &__column{
+        background-color: $color-primary-3;
+        width: 100%;
+        padding: 0 1rem;
+        border-bottom: 1px solid $color-secondary-2;
+    }
+
+    &__input-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__subtitle{
+        @include m-subheader-text;
+        margin: 0
+    }
+
+    &__label{
+        @include m-lableLinkButton-text;
+        margin: 0.5rem 0;
+    }
+
+    &__input-text{
+        @include formInputStyling;
+        @include m-bodyLarge-text;
+    }
+
+    &__bottom{
+        width: 100%;
+        padding: 3rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        &__button{
+            height: 2.25rem;
+            width: 45%;
+            border-radius: 1rem;
+
+            &-cancel{
+                border: 1px solid $color-secondary-2;
+                background-color: $color-primary-3;
+                color: $color-secondary-1;
+                font-weight: 700;
+            }
+
+            &-add{
+                border: none;
+                background-color: $color-primary-2;
+                color: $color-primary-3;
+            }
+        }
+}
+
+.warehouse__form__body{
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@include tablet{
+    .warehouse__form__body{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .warehouse-form{
+        padding: 0;
+        background-color: $color-background-2;
+
+        &__top{
+            background-color: $color-background;
+        }
+    
+        &__nav{
+            width: 100%;
+            margin: 0 2rem;
+        }
+    
+        &__title{
+            margin-left: 1rem;
+        }
+    }
+
+    .form{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        &__bottom{
+            width: 100vw;
+        }
+
+        &__column{
+            width: 50%;
+            padding: 1rem 2rem;
+            border-bottom: none;
+
+            &-1{
+                border-right: $color-secondary-2 2px solid;
+            }
+        }
+
+        &__subtitle{
+            @include td-subheader-text;
+        }
+
+        &__label{
+            @include td-lableLinkButton-text;
+        }
+
+        &__input-text{
+            @include td-bodySmall-text;
+        }
+
+        &__bottom{
+            justify-content: end;
+            margin-left: auto;
+            width: 50%;
+            padding: 2rem 0;
+        }
+
+        &__button{
+            width: fit-content;
+            padding: 0.7rem 1rem;
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            &-add{
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+@include desktop{
+    .warehouse-form{
+
+        &__top{
+            background-color: $color-background;
+        }
+    
+        &__nav{
+            width: 100%;
+            margin: 0 4rem;
+        }
+    
+        &__title{
+            margin-left: 1rem;
+        }
+    }
+
+
+}

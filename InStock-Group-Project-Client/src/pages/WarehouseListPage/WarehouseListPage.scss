@@ -1,0 +1,10 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.warehouse__container{
+    margin:0;
+    padding: 0;
+    width: 100%;
+    background-color: $color-background-2;
+}

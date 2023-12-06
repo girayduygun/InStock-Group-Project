@@ -1,0 +1,101 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+.details-break {
+	position: relative;
+	z-index: 999;
+	bottom: 1.875rem;
+	color: $color-secondary-2;
+
+	@include tablet {
+		bottom: 5.5rem;
+	}
+}
+
+.inv-details {
+	padding-left: 1rem;
+
+	@include tablet {
+		position: relative;
+		top: -55px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__label {
+		font-size: 0.688rem;
+		color: $color-secondary-1;
+	}
+
+	&__txt {
+		font-size: 0.813rem;
+		line-height: 1.25rem;
+	}
+
+	&__status-txt {
+		color: $color-supporting;
+		font-size: 0.813rem;
+		line-height: 1.25rem;
+		background-color: rgba(21, 132, 99, 0.07);
+		border-radius: 20px;
+		padding: 4px 8px;
+	}
+
+	&__tablet-right {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 1rem;
+	}
+
+	&__description {
+		padding-bottom: 1rem;
+		padding-right: 1.5rem;
+
+		@include tablet {
+			width: 18.438rem;
+		}
+	}
+
+	&__left-container {
+		padding-bottom: 1rem;
+
+		@include tablet {
+			padding-left: 1rem;
+		}
+	}
+
+	&__qty {
+		padding-right: 6.938rem;
+
+		@include tablet {
+			padding-left: 6.063rem;
+			padding-right: 0;
+		}
+	}
+
+	&__vl {
+		display: none;
+
+		@include tablet {
+			display: block;
+			border-right: 1px solid $color-secondary-2;
+			height: 9.375rem;
+			width: 1px;
+			position: absolute;
+			left: 50%;
+		}
+	}
+
+	&__right-container {
+		@include tablet {
+			padding-left: 0;
+			padding-right: 6.375rem;
+		}
+
+		@include desktop {
+			padding-right: 11.313rem;
+		}
+	}
+}
